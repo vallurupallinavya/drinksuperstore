@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -10,6 +10,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment.development';
 
 export const appConfig: ApplicationConfig = {
+
   providers: [
     provideRouter(routes, withViewTransitions()),
     provideAnimations(),
