@@ -11,6 +11,8 @@ import { collection, Firestore, getDocs } from 'firebase/firestore';
 })
 export class AppComponent  implements OnInit{
 
+  public title = "hello store"
+
   firestore = inject(Firestore);
 
   ngOnInit(): void {
