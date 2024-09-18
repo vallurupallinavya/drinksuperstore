@@ -10,5 +10,6 @@ import { AuthService } from '../../../shared/services/auth.service';
 })
 export class LoginComponent {
   authService = inject(AuthService)
-
+ 
+  
 }
