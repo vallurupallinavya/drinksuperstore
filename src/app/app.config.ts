@@ -6,6 +6,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
  import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 // import { getStorage, provideStorage } from '@angular/fire/storage';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCM4d5FkA8KYcHpyvdGLZeEjlKbK7X8XBg",
@@ -25,6 +26,6 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()), // Provides Firebase Authentication
      provideFirestore(() => getFirestore()), // Provides Firestore
     // provideStorage(() => getStorage()), // Provides Firebase Storage
-    provideZoneChangeDetection({ eventCoalescing: true }), // Adds zone change detection optimization
+    provideZoneChangeDetection({ eventCoalescing: true }), provideAnimationsAsync(), // Adds zone change detection optimization
   ],
 };
