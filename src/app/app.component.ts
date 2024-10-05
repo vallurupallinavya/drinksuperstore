@@ -1,21 +1,27 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { collection, Firestore, getDocs } from 'firebase/firestore';
+
+import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './auth/components/login/login.component';
+import { SignupComponent } from './auth/components/signup/signup.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet ,
+    MatInputModule,
+    LoginComponent,
+    SignupComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent  implements OnInit{
+export class AppComponent implements OnInit {
 
-  firestore = inject(Firestore);
+  public title = 'hello store';
 
-  ngOnInit(): void {
-    getDocs(collection(this.firestore, "testPath")).then((response) => {
-      console.log(response.docs)
-    })
-  }
+  ngOnInit(): void {}
+
+ 
+  
 }
