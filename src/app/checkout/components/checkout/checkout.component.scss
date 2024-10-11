@@ -1,0 +1,50 @@
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    
+  }
+.checkout-container1 {
+    display: flex;
+    justify-content: space-between;  // Adjust spacing between cards
+    flex-wrap: wrap;  // Allow wrapping for smaller screen sizes
+    gap: 16px;  // Add gap between cards
+}
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .half-width {
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 16px;
+  }
+  
+  .order-summary {
+    margin-top: 24px;
+    text-align: left;
+  }
+  
+  .place-order-button {
+    margin-top: 16px;
+    width: 100%;
+  }
+  
+  @media (max-width: 960px) {
+    .half-width {
+      width: 100%;
+      margin-right: 0;
+    }
+    .order-summary {
+      margin-top: 16px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .checkout-container {
+      padding: 8px;
+    }
+  }
+  

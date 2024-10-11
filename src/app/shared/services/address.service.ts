@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Firestore, collectionData, CollectionReference } from '@angular/fire/firestore';
+import { collection } from 'firebase/firestore'; // Import the modular API
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddressService {
+  constructor(private firestore: Firestore) {}
 
-   constructor(private firestore: AngularFirestore) { }
+  // Fetch Address collection data
+  getAddresses(): Observable<any[]> {
+    // Use the collection() method from firebase/firestore
+    const addressCollection = collection(this.firestore, 'Address') as CollectionReference<any>;
 
-   getAddresses(): Observable<any[]> {
-    return this.firestore.collection('Address').valueChanges();
+    // Use collectionData to retrieve the data and return as an Observable
+    return collectionData(addressCollection);
   }
-  
-
 }
