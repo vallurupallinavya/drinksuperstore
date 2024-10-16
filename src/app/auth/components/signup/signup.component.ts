@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { catchError, of, tap } from 'rxjs';
 import { AuthService } from '../../../shared/services/auth.service';
+import { AddressService } from '../../../shared/services/address.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,9 +10,11 @@ import { AuthService } from '../../../shared/services/auth.service';
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
 
   authService = inject(AuthService);
+  addressService = inject(AddressService);
+  addresses!: any[];
 
 
   userSignUp(email: string, userName: string, password: string) {
@@ -26,7 +29,18 @@ export class SignupComponent {
     ).subscribe();
   }
 
+  // test get address
 
+  ngOnInit() {
 
+    this.addressService.getAddresses().subscribe(data => {
+      this.addresses = data;
+      console.log("Addresses:", this.addresses);
+    });
+  }
 
 }
+
+
+
+

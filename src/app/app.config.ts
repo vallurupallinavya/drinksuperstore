@@ -7,25 +7,21 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 // import { getStorage, provideStorage } from '@angular/fire/storage';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { environment } from '../environments/environment'; 
+import { getFunctions, provideFunctions } from '@angular/fire/functions';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCM4d5FkA8KYcHpyvdGLZeEjlKbK7X8XBg",
-  authDomain: "drinksuperstore9.firebaseapp.com",
-  projectId: "drinksuperstore9",
-  storageBucket: "drinksuperstore9.appspot.com",
-  messagingSenderId: "1070528129816",
-  appId: "1:1070528129816:web:ef7dbba85b22a98dbecc6d",
-  measurementId: "G-SLSGGTLW71"
-}
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    
     provideRouter(routes, withViewTransitions()), // Provides routing with view transitions
     provideAnimations(), // Provides Angular animations
-    provideFirebaseApp(() => initializeApp(firebaseConfig)), // Initializes the Firebase app
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFunctions(() => getFunctions()),  // Initializes the Firebase app
     provideAuth(() => getAuth()), // Provides Firebase Authentication
      provideFirestore(() => getFirestore()), // Provides Firestore
     // provideStorage(() => getStorage()), // Provides Firebase Storage
-    provideZoneChangeDetection({ eventCoalescing: true }), provideAnimationsAsync(), // Adds zone change detection optimization
+    provideZoneChangeDetection({ eventCoalescing: true }), provideAnimationsAsync(), provideAnimationsAsync(), // Adds zone change detection optimization
   ],
 };
