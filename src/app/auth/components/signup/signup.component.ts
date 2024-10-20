@@ -32,12 +32,25 @@ export class SignupComponent implements OnInit {
   // test get address
 
   ngOnInit() {
-
+    //this.postData();  dont uncomment  they are used to
     this.addressService.getAddresses().subscribe(data => {
       this.addresses = data;
       console.log("Addresses:", this.addresses);
     });
   }
+
+  // productData = []
+
+  // postData() {
+  //   this.addressService.addMultipleProducts(this.productData)
+  //     .then(() => {
+  //       console.log("Products added successfully");
+  //     })
+  //     .catch(error => {
+  //       console.error("Error adding products:", error);
+  //     });
+  // }
+  
 
 }
 

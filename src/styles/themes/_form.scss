@@ -1,0 +1,170 @@
+input[type="radio"],
+input[type="checkbox"]
+{    
+    width: 15px;
+    height: 15px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+
+    &.is-invalid {
+        border-color: $error-color;
+        background-color: lighten($error-color, 40%);
+        color: $neutral-color;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($error-color, 0.5);
+        }
+
+        &~.invalid-feedback {
+            display: block;
+            color: $error-color;
+        }
+    }
+
+    &.is-valid {
+        border-color: $success-color;
+        background-color: lighten($success-color, 40%);
+        color: $neutral-color;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($success-color, 0.5);
+        }
+
+        &~.valid-feedback {
+            display: block;
+            color: $success-color;
+        }
+    }
+}
+
+.form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.25rem;
+    border: 2px solid $neutral-color;
+    background-color: $accent-color;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    top: 6px;
+
+    &.is-invalid {
+        border-color: $error-color;
+        background-color: lighten($error-color, 40%);
+        box-shadow: 0 0 5px rgba($error-color, 0.5);
+
+        &~.invalid-feedback {
+            display: block;
+            color: $error-color;
+        }
+    }
+
+    &.is-valid {
+        border-color: $success-color;
+        background-color: lighten($success-color, 40%);
+        box-shadow: 0 0 5px rgba($success-color, 0.5);
+
+        &~.valid-feedback {
+            display: block;
+            color: $success-color;
+        }
+    }
+}
+
+// Checkboxes and Radio Buttons
+.form-check-input {
+
+  
+ 
+  
+    // When the checkbox is in a valid state
+    &.is-valid {
+      border-color: $success-color;
+      background-color: lighten($success-color, 40%);
+      box-shadow: 0 0 5px rgba($success-color, 0.5);
+  
+      &:checked {
+        background-color: $success-color;
+        border-color: $success-color;
+      }
+  
+      & ~ .valid-feedback {
+        display: block;
+        color: $success-color;
+      }
+    }
+  
+    // Default focus and hover styles
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($neutral-color, 0.25);
+    }
+  
+    &:hover {
+      border-color: darken($neutral-color, 10%);
+    }
+  
+    // Checked state for the checkbox
+    &:checked {
+      background-color: $success-color;
+      border-color: $success-color;
+    }
+  }
+  
+  // Select dropdown styles
+select.form-control {
+    appearance: none; // Removes default browser styles
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    border: 2px solid $neutral-color;
+    background-color: $accent-color;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBkPSJNNC44OTcgNi4wNDNsMy4wMDEtMy4wMDFhMSAxIDAgMDEuMjk0LS4yOTRhMSAxIDAgMDEuODkzIDBMOS4xMDMgNi4wNDNsMy4wMDEgMy4wMDFhMSAxIDAgMDEtMS40MTQgMS40MTRMNCA2Ljk3OGExIDEgMCAwMTEuODkzIDAgbDMuMDAxLTMuMDAxeiIvPjwvc3ZnPg=='); // Custom arrow icon
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    transition: all 0.2s ease-in-out;
+  
+    // Hover and focus styles
+    &:hover,
+    &:focus {
+      border-color: darken($neutral-color, 10%);
+      box-shadow: 0 0 5px rgba($neutral-color, 0.25);
+    }
+  
+    // Invalid state
+    &.is-invalid {
+      border-color: $error-color;
+      background-color: lighten($error-color, 40%);
+      box-shadow: 0 0 5px rgba($error-color, 0.5);
+  
+      & ~ .invalid-feedback {
+        display: block;
+        color: $error-color;
+      }
+    }
+  
+    // Valid state
+    &.is-valid {
+      border-color: $success-color;
+      background-color: lighten($success-color, 40%);
+      box-shadow: 0 0 5px rgba($success-color, 0.5);
+  
+      & ~ .valid-feedback {
+        display: block;
+        color: $success-color;
+      }
+    }
+  }
+  

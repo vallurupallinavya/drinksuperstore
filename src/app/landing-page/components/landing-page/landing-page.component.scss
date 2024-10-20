@@ -1,0 +1,583 @@
+// @import 'src/styles/components/_button.scss';
+@import '../../../../styles/main.scss';
+
+.topHeader {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+
+    .social-network-links {
+        li {
+            font-size: 16px;
+        }
+
+    }
+
+    .language-call {}
+}
+
+.no-background .mat-form-field-flex {
+    background-color: transparent !important;
+}
+
+.language-call {
+    // ::ng-deep .mat-mdc-text-field-wrapper {
+    //     background: transparent !important;
+    //     border: 0;
+    // }
+}
+
+.logoSection {
+    background: #F5F5F5;
+    height: 80px;
+
+    .search-grid {
+
+        // background-color: red;
+        ::ng-deep .mat-mdc-text-field-wrapper {
+            background: #fff !important;
+            border: 0;
+            width: 250px;
+            top: 12px;
+            height: 44px;
+            color: #000;
+
+            .mat-mdc-form-field-infix {
+                padding-top: 8px;
+                padding-bottom: 8px;
+
+                .mat-mdc-input-element {
+                    font-size: 14px;
+                    color: #000;
+                }
+            }
+        }
+
+        .submit-btn {
+            width: 44px;
+            height: 44px;
+            color: #fff;
+            background: #C1440E;
+            border-radius: 6px;
+            top: 14px;
+            position: relative;
+            left: -2px;
+        }
+    }
+
+    .icons-sign {
+        color: #707070;
+        font-size: 16px;
+
+        ul {
+            li {
+                &::after {
+                    content: '|';
+                    margin: 0 8px;
+                    color: #AEAEAE;
+
+                }
+
+                &:last-child {
+                    &::after {
+                        display: none;
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.mainMenu {
+    background: #708090;
+    height: 56px;
+
+    .nav {
+        ul {
+            li {
+                font-family: $font-family-base;
+                color: $white-color;
+                font-size: $font-size-sm
+            }
+        }
+    }
+}
+
+.promotionSection {
+    background: #FBFAF9;
+
+    .card {
+        // background: $neutral-color;
+        border-radius: 24px;
+        background-image: url('../../../../assets/cardOne.jpg');
+        position: relative;
+        height: 232px;
+
+        &::before {
+            content: '';
+            background: rgba(($neutral-color), 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            font-size: $font-size-lg;
+            color: $white-color;
+
+            .small-font {
+                font-size: 12px;
+            }
+
+            h2 {
+                color: $white-color;
+                font-size: $font-size-heading;
+            }
+
+            button {
+                // background-color: $white-color;
+                // color: $neutral-color;
+                // font-size: $font-size-sm;
+            }
+
+        }
+
+        .promotion-image {
+            z-index: 1;
+            width: 176px;
+            height: 176px;
+
+            img {
+                border-radius: 50%;
+                // border-width: 10px;
+                // border-color: $white-color;
+                border: solid 8px $white-color;
+
+            }
+        }
+    }
+
+    .cardOne {
+        height: 472px;
+    }
+
+    .cardTwo {
+        background: #AAC855;
+
+        &::before {
+            background: rgba(($neutral-color), 0.1);
+        }
+    }
+
+    .cardThree {
+        background: #724598;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            background: rgba(($neutral-color), 0.1);
+        }
+
+        .content {
+            // margin-left: -185px;
+        }
+
+        .promotion-image {
+            img {
+                border-radius: 0;
+                // border-width: 10px;
+                // border-color: $white-color;
+                border: none;
+                position: absolute;
+                right: -30px;
+                top: 19px;
+
+            }
+        }
+    }
+
+    .cardFour {
+        background: url('../../../../assets/bg1.png');
+
+    }
+
+    .cardFive {
+        background: #3DB8E2;
+
+        .promotion-image {
+            img {
+                border-radius: 0;
+                // border-width: 10px;
+                // border-color: $white-color;
+                border: none;
+
+            }
+        }
+    }
+
+}
+
+.categorySection {
+    background: #FBFAF9;
+    padding: 80px 0;
+
+    .content {
+        font-size: $font-size-lg;
+        position: absolute;
+        width: 600px;
+
+        @media (max-width: 1024px) {
+            position: absolute;
+            width: 400px;
+        }
+
+        @media (max-width: 992px) {
+            position: relative;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: $font-size-heading;
+        }
+
+        button {}
+    }
+
+    .row {
+        .col-6 {
+            &:nth-child(3n+1) {
+                .card {
+                    background-color: #F2EEEB;
+                }
+            }
+
+            &:nth-child(3n+2) {
+                .card {
+                    background-color: #F0F0F0;
+                }
+            }
+
+            &:nth-child(3n) {
+                .card {
+                    background-color: #F3F3F5;
+                }
+            }
+        }
+    }
+
+    .card {
+        background-color: #F2EEEB;
+        border-radius: 10px;
+        padding: 16px;
+        height: 300px;
+
+
+        img {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .card-text {
+            font-size: $font-size-xl;
+            font-weight: bold;
+        }
+    }
+}
+
+.dealsSection {
+    background: url('../../../../assets/deals.png');
+    position: relative;
+    background-size: cover;
+    height: 592px;
+
+    &::after {
+        content: '';
+        background: rgba(($neutral-color), 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 24px;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+
+        h2 {
+            font-size: $font-size-heading;
+            color: $white-color;
+            font-weight: bold;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+    }
+}
+
+
+.newArrivalsSection {
+    background: #FBFAF9;
+    padding: 80px 0;
+    position: relative;
+
+    ::ng-deep .owl-nav {
+        position: absolute;
+        right: 25px;
+        top: -64px;
+    }
+
+    .cards {
+        width: 306px;
+        border-radius: 10px;
+
+
+        .card-img {
+            background: #F0F0F0;
+            border-radius: 10px;
+            position: relative;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: fit-content;
+                margin: 0 auto;
+            }
+
+            span {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                background-color: #ddecdd;
+                color: #32CD32;
+                font-size: $font-size-sm;
+                padding: 4px 8px;
+                border-radius: 8px;
+            }
+        }
+
+        .card-body {
+            padding: 16px 20px;
+            background-color: $white-color;
+
+            .card-text {
+                font-size: $font-size-xl;
+                font-weight: bold;
+                color: $neutral-color;
+            }
+
+            .rating-price {
+                .rating {
+                    p {
+                        color: #707070;
+                        font-size: $font-size-sm;
+                    }
+                }
+
+                .price {
+                    color: #707070;
+                    font-size: $font-size-sm;
+
+                    .old-price {
+                        color: #8F9BB3;
+                        text-decoration: line-through;
+                        display: inline-block;
+                        margin-right: 4px;
+                    }
+
+                    .new-price {
+                        color: $primary-color;
+                        font-size: $font-size-xl;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+.party-gift-promotion {
+    padding: 80px 0;
+
+    .party-grid {
+        background: url('../../../../assets/party.png');
+        padding: 24px;
+        border-radius: 16px;
+        color: $white-color;
+
+        h2 {
+            color: $white-color;
+        }
+    }
+
+    .gift-grid {
+        background: url('../../../../assets/gift.png');
+        padding: 24px;
+        border-radius: 16px;
+        color: $white-color;
+
+        h2 {
+            color: $white-color;
+        }
+    }
+}
+
+.shopBrandsSection {
+    background: #FFF5F7;
+    padding: 80px 0;
+
+    .card {
+        background-color: #F0F0F0;
+        width: 200px;
+        height: 130px;
+        border-radius: 8px;
+        background-color: #F0F0F0;
+        width: 200px;
+        height: 130px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: max-content
+        }
+    }
+
+}
+
+.customersSaysSection {
+    background-image: url('../../../../assets/bg.png');
+    padding: 80px 0;
+    color: $white-color;
+
+    h2 {
+        color: $white-color;
+
+    }
+
+    .sub-text {
+        color: $primary-color;
+        font-size: 38px;
+        font-weight: bold;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $white-color;
+        color: $neutral-color;
+        padding: 28px 20px;
+        border-radius: 10px;
+        max-width: 96%;
+
+        .card-img {
+            img {
+                width: fit-content;
+                margin: 0 auto;
+            }
+        }
+
+        .card-body {
+            .name {
+                font-size: $font-size-lg;
+            }
+
+            .designation {
+                font-size: $font-size-sm;
+            }
+
+        }
+    }
+
+    ::ng-deep .owl-nav {
+
+        margin-top: 30px;
+
+        .owl-next {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            background-color: transparent;
+            border: solid 3px #fff;
+
+            i {
+                font-size: 25px;
+            }
+        }
+
+        .owl-prev {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            background-color: transparent;
+            border: solid 3px #fff;
+
+            i {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+
+.footerSection {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    font-size: $font-size-base;
+ 
+        ul {
+            li {
+                color: rgb(255, 255, 255, 0.7);
+                margin-bottom: 10px;
+                a {
+                    color: rgb(255, 255, 255, 0.7);
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .social-icons {
+            a {
+                margin-right: 15px;
+                font-size: 24px;
+                color: #fff;
+            }
+        }
+    }
+
+    .payment-icons {
+        img {
+            width: 40px;
+            margin-right: 10px;
+        }
+    }

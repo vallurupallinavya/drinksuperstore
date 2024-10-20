@@ -1,6 +1,486 @@
-<h1>checkout works</h1>
+<section class="topHeader">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <ul class="social-network-links d-flex gap-3">
+                  <li>
+                      <i class="fa-brands fa-instagram"></i>
+                  </li>
+                  <li>
+                      <i class="fa-brands fa-twitter"></i>
+                  </li>
+                  <li>
+                      <i class="fa-brands fa-facebook-f"></i>
+                  </li>
+                  <li>
+                      <i class="fa-brands fa-pinterest"></i>
+                  </li>
+                  <li>
+                      <i class="fa-brands fa-youtube"></i>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <p class="m-0"> <span class="iconify fs-5"></span>
+                  20% off on beer, wine & liquor delivery.</p>
+          </div>
+          <div class="col-md-4">
+              <div class="language-call d-flex gap-3 justify-content-end">
+                  <div>
+                      <!-- <mat-form-field class="no-background">
+                          <mat-label>Select an option</mat-label>
+                          <mat-select>
+                              <mat-option value="*">s</mat-option>
+                              <mat-option value="#">s</mat-option>
+                              <mat-option value="@">s</mat-option>
+                              <mat-option value="$">s</mat-option>
+                          </mat-select>
+                      </mat-form-field> -->
+                  </div>
+                  <div>
+                      <p class="m-0">
+                          <span class="fluent--person-support-20-filled"></span>
+                          For Any Query Call : 7878078780.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="logoSection">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="logo mt-2">
+                  <img src="assets/logo.png" alt="Logo">
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="search-grid">
+                  <mat-form-field class="example-form-field">
+                      <input matInput type="text">
+                  </mat-form-field>
+                  <button class="submit-btn">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="icons-sign d-flex gap-3 justify-content-end mt-4">
+                  <ul class="d-flex gap-2 me-2">
+                      <li><i class="fa-solid fa-cart-shopping"></i></li>
+                      <li><i class="fa-regular fa-heart"></i></li>
+                  </ul>
+                  <ul class="d-flex gap-2">
+                      <li>Sign In</li>
+                      <li>Create Account</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="mainMenu">
+  <div class="container">
+      <div class="row">
+          <!-- Column for test text -->
+          <div class="col-12 col-sm-4">
+              test
+          </div>
+          <!-- Column for navigation list -->
+          <div class="col-12 col-sm-8">
+              <div class="nav d-flex justify-content-end mt-3">
+                  <ul class="d-flex flex-column flex-sm-row gap-4">
+                      <li>Home</li>
+                      <li>Shop</li>
+                      <li>Blog</li>
+                      <li>Pages</li>
+                      <li>Features</li>
+                      <li>Shortcodes</li>
+                      <li>Elements</li>
+                      <li>Contact</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-<form >
-    <div id="card-element"></div>
-    <button type="button" (click)="onSubmit()">Pay Now</button>
-</form>
+
+<div class="container checkout-container">
+  <div class="row">
+
+      <div class="col-lg-4 mb-4">
+          <div class="card p-4">
+              <h5 class="mb-3">Email address</h5>
+              <form>
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Username</mat-label> -->
+                              <input matInput placeholder="Enter your username">
+                          </mat-form-field>
+                          <!-- <span>You can create an account after checkout</span> -->
+                      </div>
+                  </div>
+                  <!-- <div class="mb-3 form-check p-0">
+                      <div class="custom-checkbox">
+                          <mat-checkbox>Email me with news and offers</mat-checkbox>
+                      </div>
+                  </div> -->
+                  <h5 class="mb-3">Shipping Address</h5>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>First Name</mat-label> -->
+                                  <input matInput placeholder="Enter your First Name">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>First Name</mat-label> -->
+                                  <input matInput placeholder="Enter your First Name">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Phone</mat-label> -->
+                              <input matInput placeholder="Enter your Phone Number">
+                          </mat-form-field>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Address</mat-label> -->
+                              <input matInput placeholder="Enter Address">
+                          </mat-form-field>
+                      </div>
+                  </div>
+
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Address</mat-label> -->
+                              <input matInput placeholder="Enter Address">
+                          </mat-form-field>
+                      </div>
+                  </div>
+
+
+                  <div class="row">
+                      <div class="col-md-7 mb-3">
+                          <div class="custom-select">
+                              <mat-form-field appearance="outline">
+                                  <mat-label>State</mat-label>
+                                  <mat-select placeholder="Select a value">
+                                      <mat-option value="1">Telangana</mat-option>
+                                      <mat-option value="2">Andhra Pradesh</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="col-md-5 mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>PIN code</mat-label> -->
+                                  <input matInput placeholder="Enter your PIN code">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                  </div>
+
+              </form>
+          </div>
+          <div class="">
+              <div class="card p-4">
+                  <h4>Payment</h4>
+                  <form>
+                      <div class="mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>Card Number</mat-label> -->
+                                  <input matInput placeholder="Card Number">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+
+                              <div class="custom-input">
+                                  <mat-form-field appearance="outline">
+                                      <!-- <mat-label>Expiration Date</mat-label> -->
+                                      <input matInput placeholder="Expiration Date">
+                                  </mat-form-field>
+                              </div>
+
+
+                          </div>
+                          <div class="col-md-6 mb-3">
+
+                              <div class="custom-input">
+                                  <mat-form-field appearance="outline">
+                                      <!-- <mat-label>Expiration Date</mat-label> -->
+                                      <input matInput placeholder="Security Code">
+                                  </mat-form-field>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="mb-3">
+
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>Expiration Date</mat-label> -->
+                                  <input matInput placeholder="Name on Card ">
+                              </mat-form-field>
+                          </div>
+
+
+                      </div>
+                      <div class="mb-3 form-check p-0">
+                          <div class="custom-checkbox">
+                              <mat-checkbox> Use shipping address as billing
+                                  address</mat-checkbox>
+                          </div>
+
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100">Pay Now</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+          <div class="card p-4">
+              <h5 class="mb-3">Shipping Methods</h5>
+              <form>
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Username</mat-label> -->
+                              <input matInput placeholder="Enter your username">
+                          </mat-form-field>
+                      </div>
+                  </div>
+                  <div class="mb-3 form-check p-0">
+                      <div class="custom-checkbox">
+                          <mat-checkbox>Email me with news and offers</mat-checkbox>
+                      </div>
+                  </div>
+                  <h5 class="mb-3">Delivery</h5>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>First Name</mat-label> -->
+                                  <input matInput placeholder="Enter your First Name">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>First Name</mat-label> -->
+                                  <input matInput placeholder="Enter your First Name">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Address</mat-label> -->
+                              <input matInput placeholder="Enter Address">
+                          </mat-form-field>
+                      </div>
+                  </div>
+
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Address</mat-label> -->
+                              <input matInput placeholder="Enter Address">
+                          </mat-form-field>
+                      </div>
+                  </div>
+
+
+                  <div class="row">
+                      <div class="col-md-7 mb-3">
+                          <div class="custom-select">
+                              <mat-form-field appearance="outline">
+                                  <mat-label>State</mat-label>
+                                  <mat-select placeholder="Select a value">
+                                      <mat-option value="1">Telangana</mat-option>
+                                      <mat-option value="2">Andhra Pradesh</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="col-md-5 mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>PIN code</mat-label> -->
+                                  <input matInput placeholder="Enter your PIN code">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <div class="custom-input">
+                          <mat-form-field appearance="outline">
+                              <!-- <mat-label>Phone</mat-label> -->
+                              <input matInput placeholder="Enter your Phone Number">
+                          </mat-form-field>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="">
+              <div class="card p-4">
+                  <h4>Payment</h4>
+                  <form>
+                      <div class="mb-3">
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>Card Number</mat-label> -->
+                                  <input matInput placeholder="Card Number">
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+
+                              <div class="custom-input">
+                                  <mat-form-field appearance="outline">
+                                      <!-- <mat-label>Expiration Date</mat-label> -->
+                                      <input matInput placeholder="Expiration Date">
+                                  </mat-form-field>
+                              </div>
+
+
+                          </div>
+                          <div class="col-md-6 mb-3">
+
+                              <div class="custom-input">
+                                  <mat-form-field appearance="outline">
+                                      <!-- <mat-label>Expiration Date</mat-label> -->
+                                      <input matInput placeholder="Security Code">
+                                  </mat-form-field>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="mb-3">
+
+                          <div class="custom-input">
+                              <mat-form-field appearance="outline">
+                                  <!-- <mat-label>Expiration Date</mat-label> -->
+                                  <input matInput placeholder="Name on Card ">
+                              </mat-form-field>
+                          </div>
+
+
+                      </div>
+                      <div class="mb-3 form-check p-0">
+                          <div class="custom-checkbox">
+                              <mat-checkbox> Use shipping address as billing
+                                  address</mat-checkbox>
+                          </div>
+
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100">Pay Now</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 bg-light ">
+          <div class=" p-4">
+              <div class="order-summary">
+                  <h5 class="mb-3">Order Summary</h5>
+
+                  <div class="py-4">
+
+                      <div class="col-12">
+                          <div class="d-flex align-items-start mb-4">
+                              <div>
+                                  <div class="product-img me-3">
+                                      <img src="assets/rum.png" alt="product-1">
+                                      <span class="count">10</span>
+                                  </div>
+                              </div>
+                              <div>
+                                  <p class="mb-0 fw-bold product-title">PURE COTTON HEAVYWEIGHT T-SHIRT</p>
+                                  <p class="text-muted small product-qnty">Beige / XS</p>
+                              </div>
+                              <div class="ms-auto">
+                                  <p class="mb-0">₹12,300.00</p>
+                              </div>
+                          </div>
+                          <div class="d-flex align-items-start mb-4">
+                              <div>
+                                  <div class="product-img me-3">
+                                      <img src="assets/rum.png" alt="product-1">
+                                      <span class="count">10</span>
+                                  </div>
+                              </div>
+                              <div>
+                                  <p class="mb-0 fw-bold product-title">PURE COTTON HEAVYWEIGHT T-SHIRT</p>
+                                  <p class="text-muted small product-qnty">Beige / XS</p>
+                              </div>
+                              <div class="ms-auto">
+                                  <p class="mb-0">₹12,300.00</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-12 mb-3">
+
+                          <div class="custom-input d-flex justify-content-center align-items-start">
+                              <mat-form-field appearance="outline">
+                                  <input matInput placeholder="Discount code or gift card">
+
+                              </mat-form-field>
+                              <button class="btn btn-outline-secondary apply-btn" type="button">Apply</button>
+
+                          </div>
+                      </div>
+
+                      <div class="col-12">
+                          <div class="d-flex justify-content-between mb-2">
+                              <p class="mb-0">Subtotal • 5 items</p>
+                              <p class="mb-0">₹22,500.00</p>
+                          </div>
+                          <div class="d-flex justify-content-between mb-4">
+                              <p class="mb-0">Shipping</p>
+                              <p class="mb-0 shipping-info">Enter shipping address</p>
+                          </div>
+                      </div>
+
+                      <div class="col-12">
+                          <div class="d-flex justify-content-between">
+                              <p class="fw-bold">Total</p>
+                              <p class="total-price">INR ₹22,500.00</p>
+                          </div>
+                          <p class="tax-info">Including ₹1,858.10 in taxes</p>
+                      </div>
+                  </div>
+
+
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>

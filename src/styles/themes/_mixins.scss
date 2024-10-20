@@ -1,0 +1,26 @@
+// themes/_mixins.scss
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $size == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $size == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $size == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+@mixin button-styles($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 4px;
+  font-size: $font-size-base;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
