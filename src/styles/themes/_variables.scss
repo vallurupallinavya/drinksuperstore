@@ -1,0 +1,35 @@
+// themes/_variables.scss
+
+// Colors
+$primary-color: #C64914;
+$secondary-color: #81B8A0;
+$tertiary-color: #714EA1;
+$accent-color: #F3F1F1;
+$neutral-color: #2E2625;
+$white-color: #fff;
+
+
+$success-color: #4caf50;
+$error-color: #f44336;
+
+// Typography
+$font-family-base: 'Roboto', sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-heading: 48px;
+
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Breakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1920px;

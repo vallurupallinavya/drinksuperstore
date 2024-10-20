@@ -1,77 +1,66 @@
-import { Component, inject } from '@angular/core';
-import { loadStripe, Stripe, StripeElements, StripeCardElement } from '@stripe/stripe-js';
-import { Functions, httpsCallable } from '@angular/fire/functions';  // Import Firebase Functions
+import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common'; // Import CommonModule for standalone component
+import { MatFormFieldControl } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+//import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+//import { title } from 'process';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserModule } from '@angular/platform-browser'; // Import BrowserModule
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
+
+    // BrowserAnimationsModule,
+    // BrowserModule // Add BrowserModule to imports
+  ],
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss'],
+  styleUrl: './checkout.component.scss',
 })
 export class CheckoutComponent {
+  form: FormGroup;
 
-  stripe: Stripe | null = null;
-  elements: StripeElements | null = null;
-  card: StripeCardElement | null = null;
-
-  // Inject Firebase Functions using Angular's inject function
-  private functions = inject(Functions);
-
-  async ngOnInit() {
-    // Initialize Stripe.js with your public key (ensure it's the test key)
-    this.stripe = await loadStripe('pk_test_51Q6zRJ08j24kfnWI5bVXBm9tGA5MvrHLNIycmTApAk0Erf2Odbr0DSJMdbhGgBdKoi3JsQTyODxnqSuOkPC0lwex00fD8Y20PO');
-    
-    if (this.stripe) {
-      this.elements = this.stripe.elements();
-      this.card = this.elements.create('card');  // Create card element
-      this.card.mount('#card-element');  // Mount card element into the DOM
-    }
+  constructor() {
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+      agree: new FormControl(false, [Validators.requiredTrue]),
+      option: new FormControl('', Validators.required),
+    });
   }
 
-  // Create Payment Intent via Firebase Callable Function
-  async createPaymentIntent(amount: number) {
-    const callable = httpsCallable(this.functions, 'createPaymentIntent');
-
-    try {
-      // Call Firebase function and await the response (which should contain client_secret)
-      const response: any = await callable({ amount });
-
-      // Log the response to see what you're getting from Firebase
-      console.log('Firebase callable response:', response);
-
-      if (this.stripe && this.card && response.data) {
-        const clientSecret = response.data.clientSecret;
-
-        // Log the Stripe instance, card element, and client secret for debugging
-        console.log('Stripe instance:', this.stripe);
-        console.log('Card element:', this.card);
-        console.log('Client secret:', clientSecret);
-
-        // Confirm the payment with Stripe
-        const result = await this.stripe.confirmCardPayment(clientSecret, {
-          payment_method: {
-            card: this.card,  // Pass the card element
-          },
-        });
-
-        // Log the result of the payment confirmation
-        console.log('Stripe payment result:', result);
-
-        if (result.error) {
-          console.error('Payment failed:', result.error.message);
-        } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
-          console.log('Payment successful!');
-        }
-      } else {
-        console.error('Error: Stripe, card, or response.data is missing.');
-      }
-    } catch (error) {
-      console.error('Error creating payment intent:', error);
-    }
-  }
-
-  // Trigger the payment when the user submits the form
   onSubmit() {
-    this.createPaymentIntent(5000);  // Example: Charge $50.00 (5000 cents)
+    if (this.form.valid) {
+      console.log('Form Submitted:', this.form.value);
+    } else {
+      console.log('Form is invalid');
+    }
   }
+
 }

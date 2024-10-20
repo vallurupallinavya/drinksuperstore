@@ -1,0 +1,232 @@
+// components/_button.scss
+
+.btn {
+  @include button-styles($primary-color, #fff);
+  
+  &--secondary {
+    @include button-styles($secondary-color, #fff);
+  }
+
+  &--success {
+    @include button-styles($success-color, #fff);
+  }
+
+  &--error {
+    @include button-styles($error-color, #fff);
+  }
+}
+
+
+/* ===============================
+   Button Variables
+   =============================== */
+
+   $btn-font-family: "Poppins", sans-serif;
+   $btn-font-weight: 600;
+   $btn-border-radius: 4px;
+   
+   /* Button sizes */
+   $btn-padding-small: 0.25rem 0.5rem;
+   $btn-padding-base: 0.5rem 1rem;
+   $btn-padding-large: 0.75rem 1.25rem;
+   
+   $btn-font-size-small: 0.875rem; /* 14px */
+   $btn-font-size-base: 1rem; /* 16px */
+   $btn-font-size-large: 1.25rem; /* 20px */
+   
+   /* Button colors */
+   $btn-primary-color: #ffffff;
+   $btn-primary-bg: #C64914;
+   $btn-primary-border: #C64914;
+   
+   $btn-secondary-color: $neutral-color;
+   $btn-secondary-bg: $white-color;
+   $btn-secondary-border: $white-color;
+   
+   $btn-success-color: #ffffff;
+   $btn-success-bg: #28a745;
+   $btn-success-border: #28a745;
+   
+   $btn-danger-color: #ffffff;
+   $btn-danger-bg: #dc3545;
+   $btn-danger-border: #dc3545;
+   
+   /* Button hover colors */
+   $btn-primary-hover-bg: darken($btn-primary-bg, 10%);
+   $btn-secondary-hover-bg: darken($btn-secondary-bg, 10%);
+   $btn-success-hover-bg: darken($btn-success-bg, 10%);
+   $btn-danger-hover-bg: darken($btn-danger-bg, 10%);
+   
+   /* ===============================
+      Base Button Styles
+      =============================== */
+   
+   .btn {
+     display: inline-block;
+     font-family: $btn-font-family;
+     font-weight: $btn-font-weight;
+     text-align: center;
+     text-decoration: none;
+     vertical-align: middle;
+     user-select: none;
+     border: 1px solid transparent;
+     padding: $btn-padding-base;
+    //  font-size: $btn-font-size-base;
+    font-size: $btn-font-size-small;
+     line-height: 1.5;
+     border-radius: $btn-border-radius;
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+   
+     &:focus {
+       outline: none;
+       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus ring */
+     }
+   
+     &:disabled {
+       opacity: 0.65;
+       cursor: not-allowed;
+     }
+   }
+   
+   /* ===============================
+      Button Variants
+      =============================== */
+   
+   /* Primary button */
+   .btn-primary {
+     color: $white-color;
+     background-color: $primary-color;
+     border-color: $btn-primary-border;
+   
+     &:hover {
+       background-color: $btn-primary-hover-bg;
+     }
+   
+     &:disabled {
+       background-color: $btn-primary-bg;
+     }
+   }
+   
+   /* Secondary button */
+   .btn-secondary {
+     color: $btn-secondary-color;
+     background-color: $btn-secondary-bg;
+     border-color: $btn-secondary-border;
+   
+     &:hover {
+       background-color: $btn-secondary-hover-bg;
+     }
+   
+     &:disabled {
+       background-color: $btn-secondary-bg;
+     }
+   }
+   
+   /* Success button */
+   .btn-success {
+     color: $btn-success-color;
+     background-color: $btn-success-bg;
+     border-color: $btn-success-border;
+   
+     &:hover {
+       background-color: $btn-success-hover-bg;
+     }
+   
+     &:disabled {
+       background-color: $btn-success-bg;
+     }
+   }
+   
+   /* Danger button */
+   .btn-danger {
+     color: $btn-danger-color;
+     background-color: $btn-danger-bg;
+     border-color: $btn-danger-border;
+   
+     &:hover {
+       background-color: $btn-danger-hover-bg;
+     }
+   
+     &:disabled {
+       background-color: $btn-danger-bg;
+     }
+   }
+   
+   /* ===============================
+      Button Sizes
+      =============================== */
+   
+   /* Small button */
+   .btn-sm {
+     padding: $btn-padding-small;
+     font-size: $btn-font-size-small;
+     border-radius: $btn-border-radius;
+   }
+   
+   /* Large button */
+   .btn-lg {
+     padding: $btn-padding-large;
+     font-size: $btn-font-size-large;
+     border-radius: $btn-border-radius;
+   }
+   
+   /* ===============================
+      Button Utility Classes
+      =============================== */
+   
+   /* Full-width button */
+   .btn-block {
+     display: block;
+     width: 100%;
+   }
+   
+   /* Rounded button */
+   .btn-rounded {
+     border-radius: 50px;
+   }
+   
+   /* Outline button */
+   .btn-outline {
+     background-color: transparent;
+     border-width: 2px;
+   }
+   
+   .btn-outline-primary {
+     color: $btn-primary-bg;
+     border-color: $btn-primary-border;
+   
+     &:hover {
+       background-color: $btn-primary-bg;
+       color: $btn-primary-color;
+     }
+   }
+   
+   .btn-outline-secondary {
+     color: $btn-secondary-bg;
+     border-color: $btn-secondary-border;
+   
+     &:hover {
+       background-color: $btn-secondary-bg;
+       color: $btn-secondary-color;
+     }
+   }
+   
+   /* ===============================
+      Button Group (if needed)
+      =============================== */
+   
+   .btn-group {
+     display: inline-flex;
+     .btn {
+       margin-right: -1px;
+       &:first-child {
+         border-top-right-radius: 0;
+         border-bottom-right-radius: 0;
+       }
+       &:last-child {
+         border-top-left-radius: 0;
+         border-bottom-left-radius: 0;
+       }
+     }
+   }
+   

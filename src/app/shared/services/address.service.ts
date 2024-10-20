@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collectionData, CollectionReference } from '@angular/fire/firestore';
-import { collection } from 'firebase/firestore'; // Import the modular API
+import { collection, doc, writeBatch } from 'firebase/firestore'; // Import the modular API
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,5 +16,18 @@ export class AddressService {
 
     // Use collectionData to retrieve the data and return as an Observable
     return collectionData(addressCollection);
+  }
+
+
+  addMultipleProducts(products: any[]): Promise<void> {
+    const batch = writeBatch(this.firestore); // Using the modular writeBatch method
+
+    products.forEach((product) => {
+      const docRef = doc(this.firestore, `Products/${product.id}`); // Generate a document reference for each product
+      batch.set(docRef, product); // Add the product to the batch
+    });
+
+    // Commit the batch write
+    return batch.commit();
   }
 }
