@@ -17,7 +17,23 @@ export class AddressService {
     // Use collectionData to retrieve the data and return as an Observable
     return collectionData(addressCollection);
   }
+ 
+  getCategories(): Observable<any[]> {
+    // Use the collection() method from firebase/firestore
+    const categoriesCollection = collection(this.firestore, 'Categories') as CollectionReference<any>;
 
+    // Use collectionData to retrieve the data and return as an Observable
+    return collectionData(categoriesCollection);
+  }
+
+
+  getBrands(): Observable<any[]> {
+    // Use the collection() method from firebase/firestore
+    const brandCollection = collection(this.firestore, 'Brands') as CollectionReference<any>;
+
+    // Use collectionData to retrieve the data and return as an Observable
+    return collectionData(brandCollection);
+  }
 
   addMultipleProducts(products: any[]): Promise<void> {
     const batch = writeBatch(this.firestore); // Using the modular writeBatch method

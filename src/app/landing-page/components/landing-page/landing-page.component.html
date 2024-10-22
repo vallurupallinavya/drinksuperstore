@@ -56,14 +56,14 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="logo mt-2">
-                    <img src="../../../../assets/logo.png" alt="Logo">
+                    <img src="assets/logo.png" alt="Logo">
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="search-grid">
-                    <mat-form-field class="example-form-field">
-                        <input matInput type="text">
-                    </mat-form-field>
+                <div class="search-grid d-flex align-items-start">
+                    <div>
+                        <input  type="text" name="">
+                    </div>
                     <button class="submit-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -188,84 +188,26 @@
     </div>
 </section>
 <section class="categorySection">
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
-                <div class="content">
-                    <h2>The World's Most Delicious Brands Now Available</h2>
-                    <p class="my-4">Experience the taste of the fruit, elevate your palate with whiskey</p>
-                    <button class="btn btn-primary btn-lg ">Explore All</button>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="row g-3">
-                    <div class="col-6 col-sm-3" style="visibility: hidden;">
-                        <div class="card text-center">
-                            <img src="assets/beer.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Beer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/beer.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Beer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/wine.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Wine</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/whisky.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Whisky</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/tequila.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Tequila</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/vodka.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Vodka</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/rum.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Rum</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <div class="card text-center">
-                            <img src="assets/gin.png" alt="Beer">
-                            <div class="card-body p-0 pt-2">
-                                <p class="card-text">Gin</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="col-md-12 text-center text-md-start mb-4 mb-md-0">
+            <div class="content">
+                <h2 class="text-center mb-5">Shop By Category</h2>
+                <!-- <p class="my-4">Experience the taste of the fruit, elevate your palate with whiskey</p> -->
+                <!-- <button class="btn btn-primary btn-lg ">Explore All</button> -->
             </div>
         </div>
+        <owl-carousel-o [options]="categoryOptions">
+            <ng-container *ngFor="let slide of categories; let i = index">
+              <ng-template carouselSlide>
+                <div class="card text-center" [ngClass]="cardClasses[i % cardClasses.length]">
+                  <img [src]="slide.imageUrl" class="card-img-top" [title]="slide.categories_name">
+                  <div class="card-body p-0 pt-2">
+                    <p class="card-text" [title]="slide.categories_name">{{ slide.categories_name }}</p>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
     </div>
 </section>
 <section class="dealsSection">

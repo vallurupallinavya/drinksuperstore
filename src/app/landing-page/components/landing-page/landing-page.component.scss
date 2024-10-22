@@ -34,25 +34,21 @@
     height: 80px;
 
     .search-grid {
-
         // background-color: red;
-        ::ng-deep .mat-mdc-text-field-wrapper {
+        margin-top: 8px;
+
+        input[type="text"] {
             background: #fff !important;
             border: 0;
             width: 250px;
             top: 12px;
             height: 44px;
             color: #000;
+            font-size: 14px;
+            color: #000;
+            padding-top: 8px;
+            padding-bottom: 8px;
 
-            .mat-mdc-form-field-infix {
-                padding-top: 8px;
-                padding-bottom: 8px;
-
-                .mat-mdc-input-element {
-                    font-size: 14px;
-                    color: #000;
-                }
-            }
         }
 
         .submit-btn {
@@ -60,8 +56,9 @@
             height: 44px;
             color: #fff;
             background: #C1440E;
-            border-radius: 6px;
-            top: 14px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            top: 8px;
             position: relative;
             left: -2px;
         }
@@ -105,6 +102,20 @@
             }
         }
     }
+    .location-dropdown{
+        position: relative;
+        i{
+            position: absolute;
+            left: 18px;
+            top:20px;  
+            color: #bec7d0;
+        }
+        select{
+            padding-left: 30px;
+            background-color: #92A1B0;
+            color: $white-color;
+        }
+    }
 }
 
 .promotionSection {
@@ -113,7 +124,7 @@
     .card {
         // background: $neutral-color;
         border-radius: 24px;
-        background-image: url('../../../../assets/cardOne.jpg');
+        background-image: url('../../assets/cardOne.jpg');
         position: relative;
         height: 232px;
 
@@ -206,7 +217,7 @@
     }
 
     .cardFour {
-        background: url('../../../../assets/bg1.png');
+        background: url('../../assets/bg1.png');
 
     }
 
@@ -232,8 +243,9 @@
 
     .content {
         font-size: $font-size-lg;
-        position: absolute;
-        width: 600px;
+        // position: absolute;
+        width: 800px;
+        margin: 0 auto;
 
         @media (max-width: 1024px) {
             position: absolute;
@@ -252,26 +264,10 @@
         button {}
     }
 
-    .row {
-        .col-6 {
-            &:nth-child(3n+1) {
-                .card {
-                    background-color: #F2EEEB;
-                }
-            }
-
-            &:nth-child(3n+2) {
-                .card {
-                    background-color: #F0F0F0;
-                }
-            }
-
-            &:nth-child(3n) {
-                .card {
-                    background-color: #F3F3F5;
-                }
-            }
-        }
+    ::ng-deep .owl-nav {
+        position: absolute;
+        right: 25px;
+        top: -64px;
     }
 
     .card {
@@ -279,7 +275,15 @@
         border-radius: 10px;
         padding: 16px;
         height: 300px;
+        margin-right: 16px;
 
+        &:nth-child(1) {
+            background-color: #F2EEEB;
+        }
+
+        &:nth-child(2) {
+            background-color: #E0F7FA;
+        }
 
         img {
             width: fit-content;
@@ -291,10 +295,23 @@
             font-weight: bold;
         }
     }
+    .bg-color-1{
+        background-color: #F2EEEB !important;
+    }
+    .bg-color-2{
+        background-color: #EFF1F3 !important;
+    }
+    .bg-color-3{
+        background-color: #F3F4F1 !important;
+    }   
+    .bg-color-4{
+        background-color: #F0F0F0 !important;
+    }   
 }
 
+
 .dealsSection {
-    background: url('../../../../assets/deals.png');
+    background: url('../../assets/deals.png');
     position: relative;
     background-size: cover;
     height: 592px;
@@ -334,6 +351,17 @@
     padding: 80px 0;
     position: relative;
 
+    ::ng-deep .owl-carousel {
+        .owl-item {
+
+            width: 306px;
+            border-radius: 10px;
+            max-width: 100%;
+            // border: 1px solid red;
+            // margin-right: 8px;
+        }
+    }
+
     ::ng-deep .owl-nav {
         position: absolute;
         right: 25px;
@@ -341,8 +369,10 @@
     }
 
     .cards {
-        width: 306px;
-        border-radius: 10px;
+        // width: 306px;
+        // border-radius: 10px;
+        // max-width: 100%;
+        margin-right: 16px;
 
 
         .card-img {
@@ -417,7 +447,7 @@
     padding: 80px 0;
 
     .party-grid {
-        background: url('../../../../assets/party.png');
+        background: url('../../assets/party.png');
         padding: 24px;
         border-radius: 16px;
         color: $white-color;
@@ -428,7 +458,7 @@
     }
 
     .gift-grid {
-        background: url('../../../../assets/gift.png');
+        background: url('../../assets/gift.png');
         padding: 24px;
         border-radius: 16px;
         color: $white-color;
@@ -448,9 +478,11 @@
         width: 200px;
         height: 130px;
         border-radius: 8px;
-        background-color: #F0F0F0;
+        // background-color: #F0F0F0;
         width: 200px;
         height: 130px;
+        padding: 16px;
+        max-width: 100%;
         border-radius: 8px;
         display: flex;
         justify-content: center;
@@ -464,7 +496,7 @@
 }
 
 .customersSaysSection {
-    background-image: url('../../../../assets/bg.png');
+    background-image: url('../../assets/bg.png');
     padding: 80px 0;
     color: $white-color;
 
@@ -550,34 +582,35 @@
     color: #fff;
     padding: 40px 0;
     font-size: $font-size-base;
- 
-        ul {
-            li {
-                color: rgb(255, 255, 255, 0.7);
-                margin-bottom: 10px;
-                a {
-                    color: rgb(255, 255, 255, 0.7);
-                    text-decoration: none;
 
-                    &:hover {
-                        text-decoration: underline;
-                    }
+    ul {
+        li {
+            color: rgb(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+
+            a {
+                color: rgb(255, 255, 255, 0.7);
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
                 }
             }
         }
-
-        .social-icons {
-            a {
-                margin-right: 15px;
-                font-size: 24px;
-                color: #fff;
-            }
-        }
     }
 
-    .payment-icons {
-        img {
-            width: 40px;
-            margin-right: 10px;
+    .social-icons {
+        a {
+            margin-right: 15px;
+            font-size: 24px;
+            color: #fff;
         }
     }
+}
+
+.payment-icons {
+    img {
+        width: 40px;
+        margin-right: 10px;
+    }
+}

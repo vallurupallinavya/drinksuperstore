@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule for standalone component
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MatIconModule } from '@angular/material/icon';
+import { AddressService } from '../../../shared/services/address.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -25,6 +26,22 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
+
+  addressService = inject(AddressService);
+  brands!: any[];
+  categories!: any[];
+
+  ngOnInit() {
+    //this.postData();  dont uncomment  they are used to
+    this.addressService.getBrands().subscribe(data => {
+      this.brands = data;
+      console.log("brands:", this.brands);
+    });
+    this.addressService.getCategories().subscribe(data => {
+      this.categories = data;
+      console.log("categories:", this.categories);
+    });
+  }
 
   slidesStore = [
     {
@@ -152,4 +169,38 @@ export class LandingPageComponent {
     },
     nav: true
   }
+
+  categoryOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<i class="fa-solid fa-angle-left"></i>', '<i class="fa-solid fa-angle-right"></i>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
+  cardClasses = [
+    'bg-color-1',
+    'bg-color-2',
+    'bg-color-3',
+    'bg-color-4'
+
+  ];
+  
 }
